@@ -1,0 +1,111 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.todo-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #bff6fc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #717cee;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color: #81cfd799;
+}
+
+.nav-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.nav-title input {
+  margin-right: 10px;
+}
+
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+
+.add-task button {
+  background-color: #3293fc;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.add-task button:hover {
+  background-color: #0056b3;
+}
+
+.filter-sort {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-sort select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.task-list {
+  list-style: none;
+  border: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a0e8f86c;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.task-item input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+.task-completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.task-date {
+  margin-right: 20px;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+  margin-left: 10px;
+}
