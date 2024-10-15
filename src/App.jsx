@@ -7,7 +7,7 @@ const TodoList = () => {
   const [editingTaskId, setEditingTaskId] = useState(null);
   const [editedTaskText, setEditedTaskText] = useState('');
 
-  // Add new task
+
   const addTask = () => {
     if (newTask.trim()) {
       const newTaskObj = {
@@ -20,36 +20,35 @@ const TodoList = () => {
     }
   };
 
-  // Delete task
   const deleteTask = (taskId) => {
     setTasks(tasks.filter((task) => task.id !== taskId));
   };
 
-  // Start editing task
+
   const startEditing = (task) => {
     setEditingTaskId(task.id);
     setEditedTaskText(task.text);
   };
 
-  // Update task
+
   const updateTask = () => {
     if (editedTaskText.trim()) {
       const updatedTasks = tasks.map((task) =>
         task.id === editingTaskId ? { ...task, text: editedTaskText } : task
       );
       setTasks(updatedTasks);
-      setEditingTaskId(null); // Reset editing state
-      setEditedTaskText(''); // Clear edited text
+      setEditingTaskId(null);
+      setEditedTaskText('');
     }
   };
 
-  // Cancel editing
+
   const cancelEditing = () => {
     setEditingTaskId(null);
     setEditedTaskText('');
   };
 
-  // Toggle task completion
+
   const toggleComplete = (taskId) => {
     setTasks(
       tasks.map((task) =>
@@ -60,19 +59,19 @@ const TodoList = () => {
 
   return (
     <div className="app-wrapper">
-      {/* Navigation bar */}
+
       <header>
         <nav className="navbar">
           <h1 className="nav-title">To Do Web</h1>
         </nav>
       </header>
 
-      {/* Centered Todo Box */}
+
       <div className="todo-wrapper">
         <h2 className='heading'>
           My Todo-s
         </h2>
-        {/* Add New Task */}
+
         <div className="add-task">
           <input
             type="text"
@@ -83,7 +82,7 @@ const TodoList = () => {
           <button onClick={addTask}>ADD</button>
         </div>
 
-        {/* Task List */}
+
         <ul className="task-list">
           {tasks.map((task) => (
             <li key={task.id} className="task-item">
@@ -98,9 +97,9 @@ const TodoList = () => {
                   type="text"
                   value={editedTaskText}
                   onChange={(e) => setEditedTaskText(e.target.value)}
-                  onBlur={updateTask} // Automatically save on blur
+                  onBlur={updateTask}
                   onKeyPress={(e) => {
-                    if (e.key === 'Enter') updateTask(); // Save on Enter
+                    if (e.key === 'Enter') updateTask();
                   }}
                 />
               ) : (
@@ -109,7 +108,7 @@ const TodoList = () => {
                 </span>
               )}
 
-              {/* Edit and Delete Buttons */}
+              
               <div className="task-icons">
                 {editingTaskId === task.id ? (
                   <span
@@ -118,7 +117,7 @@ const TodoList = () => {
                     role="button"
                     tabIndex={0}
                   >
-                    &#10006; {/* Cancel Icon */}
+                    &#10006;
                   </span>
                 ) : (
                   <span
@@ -127,7 +126,7 @@ const TodoList = () => {
                     role="button"
                     tabIndex={0}
                   >
-                    &#9998; {/* Edit Icon */}
+                    &#9998; 
                   </span>
                 )}
 
@@ -137,7 +136,7 @@ const TodoList = () => {
                   role="button"
                   tabIndex={0}
                 >
-                  &#10060; {/* Delete Icon */}
+                  &#10060;
                 </span>
               </div>
             </li>
